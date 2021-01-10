@@ -1,9 +1,8 @@
 <div class="main-container">
-
   <div class="search-bar-container">
     <div class="field">
       <p class="control has-icons-left">
-        <input class="input" type="text" placeholder="Filter">
+        <input class="input" type="text" placeholder="Filter" />
         <span class="icon is-small is-left">
           <i class="fas fa-search"></i>
         </span>
@@ -12,7 +11,14 @@
   </div>
 
   <div class="notes-list">
-    <app-note-card [title]="'Testing one two three'" [body]="'testing testing the body'"></app-note-card>
+    <app-note-card
+      *ngFor="let note of notes; index as i"
+      [link]="i"
+      (deleteEvent)="deleteNote(i)"
+      [title]="note.title"
+      [body]="note.body"
+    ></app-note-card>
   </div>
 
+  <button class="button floating-add-button is-primary" routerLink="new">+ Add</button>
 </div>
