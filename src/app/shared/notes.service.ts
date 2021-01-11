@@ -22,7 +22,7 @@ export class NotesService {
     return this.notes.indexOf(note);
   }
 
-  add(note: Node): number {
+  add(note: Note): number {
     // this method will add a note to the notes array and return the id of the note
     // where the id = index
     const newLength = this.notes.push(note);
